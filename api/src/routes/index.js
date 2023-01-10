@@ -1,12 +1,17 @@
-const { Router } = require('express');
-// Importar todos los routers;
-// Ejemplo: const authRouter = require('./auth.js');
+import { Router } from 'express'
+import multer from 'multer';
+import * as CountryController from '../controllers/countryController.js'
+import authRouter from './auth.js'
 
-
+const upload = multer({ dest: 'uploads' })
 const router = Router();
 
-// Configurar los routers
-// Ejemplo: router.use('/auth', authRouter);
+router.get('/countries', CountryController.getCountries)
+router.get('/countries/:id', CountryController.getCountry)
+router.post('/activities', CountryController.createActivity)
 
+router.post('/upload', upload.single('image'), CountryController.uploadImage)
 
-module.exports = router;
+router.use('/', authRouter)
+
+export default router

@@ -6,7 +6,7 @@ const {
   DB_HOST
 } = process.env;
 
-const DB_NAME = 'food'
+const DB_NAME = 'countries'
 
 export const connection = new Sequelize(
   DB_NAME,

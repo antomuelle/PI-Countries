@@ -17,12 +17,13 @@
 //     =====`-.____`.___ \_____/___.-`___.-'=====
 //                       `=---='
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-const server = require('./src/app.js');
-const { conn } = require('./src/db.js');
+import server from './src/app.js'
 
-// Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
-  server.listen(3001, () => {
-    console.log('%s listening at 3001'); // eslint-disable-line no-console
-  });
-});
+import { sequelize } from './src/database/relations.js'
+await sequelize.sync({ force: false })
+// import * as Seeder from './src/database/seeder.js'
+// await Seeder.seed()
+
+server.listen(3001, ()=> {
+  console.log('%s listening at 3001')
+})
