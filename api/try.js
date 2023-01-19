@@ -1,4 +1,19 @@
-import axios from "axios";
+// read all files in a directory
+// and rename them with a number incrementing
+// from 1 to n
+
+import { sequelize } from "./src/database/relations.js"
+
+const { Activity, Continent, Country, Currency, Language } = sequelize.models
+
+const all = await Country.findAndCountAll({
+  attributes: ["id", "name", "image"],
+  include: { model: Continent, as: "continent", attributes: ["name"] },
+})
+console.log(all.count)
+
+
+/* import axios from "axios";
 
 const continents = new Set()
 const languages = {}
@@ -41,4 +56,4 @@ data.forEach(country => {
   
 });
 
-console.log(continents, Object.keys(languages).length)
+console.log(continents, Object.keys(languages).length) */

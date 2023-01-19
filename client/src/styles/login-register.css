@@ -1,0 +1,16 @@
+.input {
+  border: solid 1px #8d8d8d;
+  border-radius: 5px;
+  outline: none;
+  font-weight: 400;
+}
+.input::placeholder {color: #9b9b9b;font-weight: 300;}
+.input:focus {border-color: var(--color2);background-color: #fffbf8;}
+
+.tabulated .text {
+  color: var(--color2);
+  font-weight: 500;
+}
+.tabulated .cell:last-child {padding: .25em 0;width: 100%;}
+
+.cell-vertical {vertical-align: top;}

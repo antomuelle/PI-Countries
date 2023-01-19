@@ -1,0 +1,19 @@
+.not-found {
+  color: white;
+  height: 100%;
+  background-color: #f9a542;
+}
+.not-found > div {height: 100%;}
+.not-found img {max-height: 600px;}
+.oops p:nth-child(1) {
+  font-size: 4em;
+  font-weight: bold;
+  font-style: italic;
+}
+.oops p:nth-child(2) {
+  font-size: 1.5em;
+}
+.oops p:nth-child(3) {
+  font-size: 7em;
+  font-weight: bold;
+}

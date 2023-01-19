@@ -1,0 +1,38 @@
+.steps {background-color: #ededed;white-space: nowrap;}
+.add-step {
+  padding: .25em .5em;
+  border-radius: 6px;
+}
+.steps .edit {
+  background-color: var(--orange-3);
+  color: white;
+  padding: 0.25em 0.5em;
+  margin-left: 1px;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+}
+.steps .minus.disabled {
+  background-color: darkgray;
+  pointer-events: none;
+}
+.steps .edit:hover {background-color: orange;}
+.steps input {margin-bottom: .25em;}
+.steps input:last-child {margin-bottom: 0;}
+
+.diets .text {vertical-align: middle;}
+.diets select {
+  overflow-y: auto;
+  width: 100%;
+  height: 150px;
+  border-radius: 5px;
+  border: solid 1px #8d8d8d;
+  outline: none;
+}
+.diets option {
+  font-family: 'Roboto';
+  font-size: 1rem;
+  padding: .25em .5em;
+  border-bottom: solid 1px #8d8d8d;
+}
+.diets option:last-child {border-bottom: none;}

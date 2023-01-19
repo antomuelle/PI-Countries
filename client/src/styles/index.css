@@ -1,0 +1,59 @@
+html, body, #root {height: 100%;}
+body {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+code {font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',monospace;}
+
+input {outline: none;}
+#root {
+  --text1: #1C212C;
+  --text2: #4c4f58;
+
+  --theme1: #006064;
+  --theme2: #00838F;
+  --theme3: #0097A7;
+  --theme4: #00ACC1;
+  --theme5: #00BCD4;
+  --theme6: #26C6DA;
+  --theme7: #4DD0E1;
+  --theme8: #80DEEA;
+  --theme9: #B2EBF2;
+  --theme10: #E0F7FA;
+
+  --color1: #EB4A40;
+  --color2: #EF694C;
+  --color3: #F1855D;
+  --color4: #F59E72;
+  --color5: #F7B58B;
+  --color6: #F9CBA6;
+  --color7: #FDE0C5;
+
+  --orange1: #FFA920;
+  --orange2: #F4B031;
+  --orange3: #F3BA3C;
+  --orange4: #FAC865;
+  --orange5: #FDD47F;
+  --orange6: #FFDC9D;
+}
+
+.rolling {
+	animation: rolling 1.5s infinite;
+	animation-timing-function: linear;
+  color: white;
+}
+.rolling p {line-height: 1;}
+@keyframes rolling {
+	from {transform: rotate(0deg);}
+	to {transform: rotate(360deg);}
+}
+
+.tabulated {
+  display: table;
+  table-layout: auto;
+  min-width: 380px;
+}
+.tabulated .row {display: table-row;}
+.tabulated .cell {display: table-cell;}
+.tabulated .cell:first-child {padding-right: .5em;}

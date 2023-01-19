@@ -8,6 +8,8 @@ const router = Router();
 
 router.get('/countries', CountryController.getCountries)
 router.get('/countries/:id', CountryController.getCountry)
+router.get('/continents', CountryController.allContinents)
+router.get('/activities', CountryController.getActivities)
 router.post('/activities', CountryController.createActivity)
 
 router.post('/upload', upload.single('image'), CountryController.uploadImage)

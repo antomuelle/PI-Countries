@@ -26,7 +26,7 @@ export default connection.define('Activity', {
     unique: false,
     allowNull: false,
     defaultValue: 'summer',
-    validate: { isIn: ['spring', 'summer', 'autumn', 'winter'] }
+    // validate: { isIn: ['spring', 'summer', 'autumn', 'winter'] }
   }
 },
 {

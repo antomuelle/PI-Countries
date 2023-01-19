@@ -6,7 +6,12 @@ import { encryptPass, jsonError, jsonOk } from '../code/utils.js';
 import { validator } from '../code/validator.js'
 import User from '../models/User.js'
 
-export function check(req, res) { jsonOk(res, { authenticated: req.isAuthenticated() }) }
+export function check(req, res) {
+  jsonOk(res, {
+    authenticated: req.isAuthenticated(),
+    user: req.isAuthenticated() ? { id: req.user.id, names: req.user.names, username: req.user.username } : null
+  })
+}
 
 export function login(_, res) { jsonOk(res, 'login success') }
 
@@ -34,13 +39,16 @@ export async function register(req, res) {
   if (user)
     return jsonError(res, 'the user already exists')
 
-  User.create({
+  user = await User.create({
     names: body.names,
     username: body.username,
     email: body.email,
     password: await encryptPass(body.password),
   })
-  jsonOk(res, 'user created successfully')
+  req.login(user, (error) => {
+    if (error) { return jsonError(res, error.message) }
+    return jsonOk(res, 'user created successfully')
+  })
 }
 
 /**
@@ -50,6 +58,6 @@ export async function register(req, res) {
  export function logout(req, res, next) {
   req.logout( (error)=> {
     if (error) { return next(error) }
-    res.redirect('/login-out')
+    jsonOk(res, 'logout success')
   })
 }

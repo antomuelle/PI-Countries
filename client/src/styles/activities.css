@@ -1,0 +1,57 @@
+.activities {
+  background-color: rgba(221, 221, 221, 0.7);
+  padding: 1em;
+}
+
+.add-entity {
+  color: #f3f3f3;
+  font-size: 3rem;
+  line-height: .75;
+  background-color: var(--green-4);
+  display: inline-block;
+  border-radius: 50%;
+  padding: 0.75rem;
+  width: 2.5rem;height: 2.5rem;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 2px 4px 8px;
+  position: absolute;
+  right: .25em;
+  top: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+.add-entity:hover {background-color: var(--green-1);}
+
+.search-bar .wrapper {flex-grow: 1;}
+
+.mini-card {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 500px;
+  margin-top: .25em;
+  margin-bottom: 2em;
+}
+.mini-card p {
+  padding: .5em .75em;
+  padding-right: 2em;
+  color: white;
+  background-color: var(--blue-2);
+  position: relative;
+  user-select: none;
+  margin: 0 .5em .5em 0;
+  white-space: nowrap;
+}
+.mini-card i {
+  font-style: normal;
+  background-color: var(--blue-1);
+  position: absolute;
+  right: 0;top: 0;
+  padding: .5em;
+  cursor: pointer;
+}
+.mini-card i:hover {background-color: var(--blue-6);}
+
+.at-end {
+  position: absolute;
+  bottom: .5em;right: 1em;
+}

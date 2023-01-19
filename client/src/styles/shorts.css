@@ -1,0 +1,79 @@
+.modal {
+  backdrop-filter: blur(4px);
+  z-index: 10;
+}
+.modal:hover {cursor: not-allowed;}
+.modal > .content:hover {cursor: auto;}
+.modal > .content {
+  background-color: white;
+  position: fixed;
+  padding: 1em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+.modal .close-btn {
+  position: absolute;
+  top: -1em;right: -1em;
+  padding: .4em .6em;
+  background-color: indianred;
+  border-radius: 50%;
+}
+/* Loading */
+.loading {
+  background-color: rgba(0, 0, 0, 0.65);
+  position: absolute;
+  width: 100%; height: 100%;
+  top: 0; left: 0;
+  z-index: 10;
+}
+.loader-wraper {
+  width: 40px;
+  height: 40px;
+}
+.loader {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 5px solid transparent;/* #162534; */
+  border-top-color: var(--color1);/* #4bc8eb; */
+  border-bottom-color: var(--color1);/* #f13a8f; */
+  border-radius: 50%;
+  animation: rotate 5s linear infinite;
+}
+.loader-inner {
+  border-top-color: #fffbf8;/* #36f372; */
+  border-bottom-color: #fffbf8;/* #fff; */
+  animation-duration: 2.5s;
+}
+@keyframes rotate {
+  0% {transform: scale(1) rotate(360deg);}
+  50% {transform: scale(0.8) rotate(-360deg);}
+  100% {transform: scale(1) rotate(360deg);}
+}
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: whitesmoke;
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: .5rem .75rem;
+  border-radius: 6px;
+  box-shadow: 0 0 4px black;
+  user-select: none;
+  z-index: 100;
+}
+.toast.none {display: none;}
+.toast.show {display: inline;}
+/* Errors */
+.errors {color: #ff6464;white-space: nowrap;}
+.errors .cell {border-bottom: solid 1px #eaeaea;}
+
+.danger {
+  font-style: normal;
+  font-weight: bold;
+  color: white;
+  background-color: #ff6464;
+  display: inline-block;
+  padding: 0 .25em;
+}

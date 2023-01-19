@@ -20,7 +20,8 @@ Country.belongsToMany(Activity, {
 Activity.belongsToMany(Country, {
   through: { model: CountryActivity, unique: false },
   foreignKey: 'activity_id',
-  otherKey: 'country_id'
+  otherKey: 'country_id',
+  as: 'countries'
 })
 
 Country.belongsToMany(Currency, {
