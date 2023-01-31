@@ -31,14 +31,14 @@ export default function Activities() {
         <tr><th>ID</th><th>Name</th><th>Difficulty</th><th>Duration</th><th>Season</th><th>Countries</th></tr>
       </thead>
       <tbody>
-        {activities.map(a => (
+        {activities?.map(a => (
           <tr key={a.id}>
             <td>{a.id}</td>
             <td>{a.name}</td>
             <td>{a.difficulty}</td>
             <td>{a.duration}</td>
             <td>{a.season}</td>
-            <td>{a.countries.map(c => c.name).join(', ')}</td>
+            <td>{a.countries?.map(c => c.name).join(', ')}</td>
           </tr>
         ))}
       </tbody>

@@ -3,7 +3,7 @@ import axios from "axios"
 import { useParams } from "react-router-dom"
 import { URL } from "../code/Constants"
 import { useOnMounted } from "../code/utils"
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const formater = new Intl.NumberFormat().format
 
@@ -13,6 +13,9 @@ export default function Country(props) {
   useOnMounted(()=> {
     axios.get(URL.local.search + '/' + id).then(res => setCountry(res.data))
   })
+  useEffect(()=> {
+    axios.get(URL.local.search + '/' + id).then(res => setCountry(res.data))
+  }, [id])
 
   return (
   <div className="country">

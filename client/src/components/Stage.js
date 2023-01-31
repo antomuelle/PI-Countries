@@ -3,7 +3,7 @@ import { randomInt } from '../code/utils'
 import '../styles/stage.css'
 
 const PATH = '/images/boxes/'
-const CHANGES = 2
+const CHANGES = 5
 const INTERVAL = 800
 const img_count = 56
 const positions = ['left','top','rigth','bottom']
